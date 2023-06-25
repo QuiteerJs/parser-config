@@ -1,0 +1,13 @@
+{
+  "name": "@quiteer/parser-config-monorepo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@quiteer/eslint-config": "^0.0.3",
+    "@quiteer/ts-config": "^0.0.6",
+    "@types/node": "^20.3.1",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.43.0",
+    "typescript": "^5.1.3"
+  }
+}
