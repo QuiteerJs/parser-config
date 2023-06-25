@@ -18,13 +18,13 @@ pnpm add @quiteer/parser-config -D
 
 ## 使用
 
-> configPath : 传入具体路径或者所在目录路径，configPath 的 默认路径为当前命令行启动路径 （指定 ·configName· 参数时可传入undefined） , 
-> 
-> configName ：可选，传入参数后，无需指定具体参数，传入目录路径即可，自动匹配不同后缀的配置文件
+`configPath` : 传入具体路径或者所在目录路径，configPath 的 默认路径为当前命令行启动路径 （指定 ·configName· 参数时可传入undefined） 
+
+`configName` : 可选，传入参数后，无需指定具体参数，传入目录路径即可，自动匹配不同后缀的配置文件
 
 ```ts
 import { resolve } from 'path'
-import { resolveConfig } from '@quiteer/parser-config'
+import { parserConfig } from '@quiteer/parser-config'
 
 const filePath = (path: string) => resolve(resolve(), path)
 
@@ -36,28 +36,28 @@ const ts = filePath('./test-ts/config.ts')
 const yaml = filePath('./test-yaml/config.yaml')
 
 const test = async () => {
-  const yamlConfig = await resolveConfig(yaml)
+  const yamlConfig = await parserConfig(yaml)
   console.log('yamlConfig: ', yamlConfig)
 
-  const jsonConfig = await resolveConfig(json)
+  const jsonConfig = await parserConfig(json)
   console.log('jsonConfig: ', jsonConfig)
 
-  const mjsConfig = await resolveConfig(mjs)
+  const mjsConfig = await parserConfig(mjs)
   console.log('mjsConfig: ', mjsConfig)
 
-  const jsConfig = await resolveConfig(js)
+  const jsConfig = await parserConfig(js)
   console.log('jsConfig: ', jsConfig)
 
-  const cjsConfig = await resolveConfig(cjs)
+  const cjsConfig = await parserConfig(cjs)
   console.log('cjsConfig: ', cjsConfig)
 
-  const tsConfig = await resolveConfig(ts)
+  const tsConfig = await parserConfig(ts)
   console.log('tsConfig: ', tsConfig)
 
-  const rootConfig = await resolveConfig(undefined, 'config')
+  const rootConfig = await parserConfig(undefined, 'config')
   console.log('rootConfig: ', rootConfig)
 
-  const elctornup = await resolveConfig(undefined, 'electronup.config')
+  const elctornup = await parserConfig(undefined, 'electronup.config')
   console.log('elctornup: ', JSON.stringify(elctornup))
 }
 test()
@@ -71,9 +71,9 @@ test()
  * @param {any} configName?:string  配置文件名
  * @returns {any}
  */
-declare function resolveConfig(configPath?: string, configName?: string): Promise<any>
+declare function parserConfig(configPath?: string, configName?: string): Promise<any>
 
-export { resolveConfig }
+export { parserConfig }
 ```
 
 ## 配置文件优先级

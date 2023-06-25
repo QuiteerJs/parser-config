@@ -1,6 +1,6 @@
 {
   "name": "@quiteer/parser-config",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "用于读取项目下 'ts', 'mjs', 'js', 'cjs', 'json', 'yaml' 的用户配置",
   "author": "quiteer",
   "license": "MIT",
